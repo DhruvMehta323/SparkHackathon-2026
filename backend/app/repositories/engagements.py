@@ -82,3 +82,37 @@ class EngagementRepository(BaseRepository):
             "DELETE FROM engagements WHERE engagement_id = ?",
             (engagement_id,)
         )
+
+    @staticmethod
+    def get_project_stats(project_id):
+        """Get aggregated engagement statistics for a project"""
+        query = """
+        SELECT 
+            COUNT(*) as total_reactions,
+            SUM(CASE WHEN reaction = 'like' THEN 1 ELSE 0 END) as likes,
+            SUM(CASE WHEN reaction = 'insightful' THEN 1 ELSE 0 END) as insightful,
+            SUM(CASE WHEN reaction = 'inspiring' THEN 1 ELSE 0 END) as inspiring
+        FROM engagements
+        WHERE project_id = ?
+        """
+        row = BaseRepository.fetch_one(query, (project_id,))
+        
+        # Get impressions from projects table
+        project = ProjectRepository.get_project(project_id)
+        impressions = project.get("impressions", 0) if project else 0
+        
+        if row:
+            total_reactions = row[0] or 0
+            engagement_score = total_reactions / max(impressions, 1) if impressions > 0 else 0.0
+            
+            return {
+                "project_id": project_id,
+                "total_reactions": total_reactions,
+                "likes": row[1] or 0,
+                "insightful": row[2] or 0,
+                "inspiring": row[3] or 0,
+                "impressions": impressions,
+                "engagement_score": engagement_score
+            }
+        
+        return None
