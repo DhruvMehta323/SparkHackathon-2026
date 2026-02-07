@@ -1,0 +1,6 @@
+pytest
+fastapi
+uvicorn[standard]
+pydantic
+httpx
+numpy
