@@ -12,7 +12,7 @@ Project overview
 How to run & test locally
 - From project root:
 ```bash
-cd /Users/dhruv_mehta/Desktop/US\ Projects/SparkHack
+cd "path to your dir"/SparkHack
 PYTHONPATH=. python3 app/scripts/init_db.py      # initialize schema
 PYTHONPATH=. python3 -m unittest discover -v tests
 ```
