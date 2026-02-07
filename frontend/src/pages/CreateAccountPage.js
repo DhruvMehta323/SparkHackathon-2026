@@ -50,14 +50,14 @@ const CreateAccountPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send data to backend
+    
     console.log('Form submitted:', formData);
     navigate('/home');
   };
 
   const handleSocialSignIn = (provider) => {
     console.log(`Sign in with ${provider}`);
-    // Implement social sign-in logic
+   
     navigate('/home');
   };
 

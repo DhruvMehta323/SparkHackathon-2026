@@ -3,7 +3,7 @@
   background: #F9FAFB;
 }
 
-/* Navigation */
+
 .navbar {
   background: white;
   border-bottom: 1px solid #E5E7EB;
@@ -128,7 +128,7 @@
   transform: scale(1.05);
 }
 
-/* Hero Banner */
+
 .hero-banner {
   background: linear-gradient(135deg, #4F86F7 0%, #3B5DE7 100%);
   color: white;
@@ -177,7 +177,7 @@
   margin: 0;
 }
 
-/* Quick Actions */
+
 .quick-actions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -276,7 +276,7 @@
   outline: none;
 }
 
-/* Projects Grid */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

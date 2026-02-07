@@ -12,7 +12,7 @@ const HomePage = () => {
   const [selectedGenre, setSelectedGenre] = useState('all');
   const [selectedRole, setSelectedRole] = useState('all');
 
-  // Sample project data
+  
   const projects = [
     {
       id: 1,
