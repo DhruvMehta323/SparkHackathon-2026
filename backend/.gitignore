@@ -8,6 +8,12 @@ venv/
 env/
 ENV/
 
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+
 # Database files
 *.db
 *.db-journal
