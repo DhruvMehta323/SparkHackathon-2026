@@ -8,6 +8,7 @@ from app.repositories.creators import CreatorRepository
 from app.repositories.projects import ProjectRepository
 from app.repositories.engagements import EngagementRepository
 from app.repositories.embeddings import EmbeddingRepository
+from app.repositories.fairrank import FairRankRepository
 from app.services.similarity_engine import SimilarityEngine
 from app.services.fairrank_engine import FairRankEngine
 from app.services.gamification import GamificationService
